@@ -18,13 +18,13 @@ export default (state = initialState, action) => {
         ...state,
         images: action.images,
         loading: false
-      }
+      };
     case Actions.FETCH_IMAGES_FAIL:
       return {
         ...state,
         error: action.error,
         loading: false
-      }
+      };
     case Actions.CHANGE_IMAGE:
     default:
       return state;
