@@ -26,6 +26,10 @@ export default (state = initialState, action) => {
         loading: false
       };
     case Actions.CHANGE_IMAGE:
+      return {
+        ...state,
+        index: (state.index + 1) % state.images.length
+      };
     default:
       return state;
   }

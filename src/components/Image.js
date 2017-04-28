@@ -4,8 +4,10 @@ class Image extends Component {
   render() {
     const { src } = this.props;
     return (
-      <div className='screensaver-image' style={{ backgroundImage: `url("${src}")`}}>
-      </div>
+      <div
+        className={`screensaver-image ${this.props.visible ? 'active' : ''}`}
+        style={{ backgroundImage: `url("${src}")`}}
+      />
     );
   }
 }
