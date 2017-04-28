@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Image from './Image';
 
 class Screensaver extends Component {
+  componentDidMount() {
+    this.props.fetchImages();
+  }
+
   render() {
     const { images } = this.props;
     return (
