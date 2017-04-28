@@ -3,9 +3,12 @@ import Image from './Image';
 
 class Screensaver extends Component {
   render() {
+    const { images } = this.props;
     return (
       <div className='screensaver'>
-        <Image src="https://pakkudon.github.io/australian-bird-watchers-society/dist/9488ca1c0452970f859f7b47b6fbea64.jpg" />
+        {images.map((url, i) => (
+          <Image key={`image-${i}`} src={url} />
+        ))}
       </div>
     )
   }
