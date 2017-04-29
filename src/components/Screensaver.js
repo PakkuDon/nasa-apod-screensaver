@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Image from './Image';
 
-const INTERVAL = 5000;
+const INTERVAL = 10000;
 
 class Screensaver extends Component {
   componentDidMount() {
