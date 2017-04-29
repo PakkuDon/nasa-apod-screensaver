@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Image from './Image';
 
 const INTERVAL = 10000;
@@ -26,5 +27,21 @@ class Screensaver extends Component {
     )
   }
 }
+
+Screensaver.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      date: PropTypes.string,
+      title: PropTypes.string,
+      explanation: PropTypes.string,
+      hdurl: PropTypes.string,
+      url: PropTypes.string
+    })
+  )
+};
+
+Screensaver.defaultProps = {
+  images: []
+};
 
 export default Screensaver;

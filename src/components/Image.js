@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Image extends Component {
   render() {
@@ -11,5 +12,16 @@ class Image extends Component {
     );
   }
 }
+
+Image.propTypes = {
+  image: PropTypes.shape({
+    date: PropTypes.string,
+    title: PropTypes.string,
+    explanation: PropTypes.string,
+    hdurl: PropTypes.string,
+    url: PropTypes.string
+  }).isRequired,
+  visible: PropTypes.bool.isRequired
+};
 
 export default Image;
