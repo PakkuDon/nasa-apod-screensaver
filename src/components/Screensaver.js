@@ -15,10 +15,10 @@ class Screensaver extends Component {
     const { images, index } = this.props;
     return (
       <div className='screensaver'>
-        {images.map((url, i) => (
+        {images.map((image, i) => (
           <Image
             key={`image-${i}`}
-            src={url}
+            image={image}
             visible={i === index}
           />
         ))}
