@@ -24,5 +24,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - `npm start`
 - Navigate to `http://localhost:3000`
 
+## Deployment instructions
+- Edit homepage field in package.json
+- `npm run build`
+- `npm run deploy`
+
 ## Future updates
 - ?
