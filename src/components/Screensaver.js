@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Image from './Image';
 
-const INTERVAL = 10000;
+const INTERVAL = 30000;
 
 class Screensaver extends Component {
   componentDidMount() {
