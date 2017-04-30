@@ -2,6 +2,7 @@
   "name": "nasa-apod-screensaver",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pakkudon.github.io/nasa-apod-screensaver",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
     "moment": "^2.18.1",
@@ -13,12 +14,14 @@
     "redux-saga": "^0.14.6"
   },
   "devDependencies": {
+    "gh-pages": "^0.12.0",
     "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   }
 }
