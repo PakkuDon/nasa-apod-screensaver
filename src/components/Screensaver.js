@@ -13,7 +13,7 @@ class Screensaver extends Component {
   }
 
   render() {
-    const { images, index } = this.props;
+    const { images, index, showExplanations, toggleExplanations } = this.props;
     return (
       <div className='screensaver'>
         {images.map((image, i) => (
@@ -21,6 +21,8 @@ class Screensaver extends Component {
             key={`image-${i}`}
             image={image}
             visible={i === index}
+            showExplanation={showExplanations}
+            onImageClick={toggleExplanations}
           />
         ))}
       </div>
@@ -37,7 +39,9 @@ Screensaver.propTypes = {
       hdurl: PropTypes.string,
       url: PropTypes.string
     })
-  )
+  ),
+  showExplanations: PropTypes.bool.isRequired,
+  toggleExplanations: PropTypes.func.isRequired
 };
 
 Screensaver.defaultProps = {

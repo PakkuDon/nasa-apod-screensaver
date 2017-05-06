@@ -4,6 +4,7 @@ import {
   FETCH_IMAGES_SUCCESS,
   FETCH_IMAGES_FAIL,
   CHANGE_IMAGE,
+  TOGGLE_EXPLANATIONS
 } from './constants';
 
 export const fetchImages = () => ({
@@ -26,4 +27,8 @@ export const fetchImagesFail = error => ({
 
 export const changeImage = () => ({
   type: CHANGE_IMAGE
+})
+
+export const toggleExplanations = () => ({
+  type: TOGGLE_EXPLANATIONS
 })

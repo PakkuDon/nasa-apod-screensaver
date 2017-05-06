@@ -30,6 +30,7 @@ body,
 }
 
 .screensaver-image.active {
+  z-index: 5;
   opacity: 1;
 }
 
@@ -40,7 +41,25 @@ body,
   width: 100%;
   padding: 1em;
   color: #EEE;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-info h1 {
+  margin: 0.25em 0;
+  padding-right: 1.25em;
+}
+
+.image-info .explanation {
+  line-height: 1.5;
+  overflow-y: auto;
+  display: none;
+}
+
+.image-info .explanation.show-explanation {
+  display: block;
 }
 
 .image-info footer {
@@ -49,6 +68,21 @@ body,
 
 .image-info time {
   font-style: italic;
+}
+
+.image-info .toggle-expand {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1em;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #EEE;
+  background: transparent;
+  border: 0.10em solid #EEE;
 }
 
 body {

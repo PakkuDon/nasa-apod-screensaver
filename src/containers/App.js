@@ -7,7 +7,8 @@ const App = connect(
   state => ({
     loading: state.loading,
     images: state.images,
-    index: state.index
+    index: state.index,
+    showExplanations: state.showExplanations
   }),
   dispatch => (
     bindActionCreators(actions, dispatch)

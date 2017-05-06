@@ -3,7 +3,8 @@ import * as Actions from './constants';
 const initialState = {
   images: [],
   index: 0,
-  loading: false
+  loading: false,
+  showExplanations: false,
 }
 
 export default (state = initialState, action) => {
@@ -30,6 +31,11 @@ export default (state = initialState, action) => {
         ...state,
         index: (state.index + 1) % state.images.length
       };
+    case Actions.TOGGLE_EXPLANATIONS:
+      return {
+        ...state,
+        showExplanations: !state.showExplanations
+      }
     default:
       return state;
   }
