@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 
 const ImageInfo = props => {
-  const { title, explanation, date, onClick, showExplanation } = props;
+  const { title, explanation, date, url, onClick, showExplanation } = props;
   const formattedDate = moment(date, 'YYYY-MM-DD').format('MMMM Do YYYY');
 
   return (
@@ -14,7 +14,9 @@ const ImageInfo = props => {
       >
         {showExplanation ? '-' : '+'}
       </button>
-      <h1>{title}</h1>
+      <h1>
+        <a href={url} download>{title}</a>
+      </h1>
       <p className={`explanation ${showExplanation ? 'show-explanation' : ''}`}>
         {explanation}
       </p>
@@ -29,11 +31,13 @@ ImageInfo.propTypes = {
   title: PropTypes.string,
   explanation: PropTypes.string,
   date: PropTypes.string,
+  url: PropTypes.string,
   showExplanation: PropTypes.bool.isRequired,
   onClick: PropTypes.func
 };
 
 ImageInfo.defaultProps = {
+  url: '',
   onClick: () => {}
 }
 

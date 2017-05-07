@@ -5,13 +5,15 @@ import ImageInfo from './ImageInfo';
 const Image = props => {
   const { image, visible, showExplanation, onImageClick } = props;
   const { title, explanation, date } = image;
+  const imageUrl = image.hdurl || image.url;
 
   return (
     <div
       className={`screensaver-image ${visible ? 'active' : ''}`}
-      style={{ backgroundImage: `url("${image.hdurl || image.url}")`}}
+      style={{ backgroundImage: `url("${imageUrl}")`}}
     >
       <ImageInfo
+        url={imageUrl}
         title={title}
         explanation={explanation}
         date={date}
