@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://pakkudon.github.io/nasa-apod-screensaver",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "isomorphic-fetch": "^2.2.1",
     "moment": "^2.18.1",
     "prop-types": "^15.5.8",

@@ -9,13 +9,11 @@ const ImageInfo = props => {
   return (
     <div className='image-info'>
       <button
-        className='toggle-expand'
+        className={`toggle-expand fa fa-${showExplanation ? 'minus' : 'plus'}-circle`}
         onClick={onClick}
-      >
-        {showExplanation ? '-' : '+'}
-      </button>
+      />
       <h1>
-        <a href={url} download>{title}</a>
+        {title} <a href={url} title='Download' download><i className='fa fa-download' aria-hidden /></a>
       </h1>
       <p className={`explanation ${showExplanation ? 'show-explanation' : ''}`}>
         {explanation}

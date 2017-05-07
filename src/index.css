@@ -84,15 +84,13 @@ a:focus {
   position: absolute;
   top: 0;
   right: 0;
-  margin: 1em;
+  margin: 0.5em;
+  font-size: 1.5em;
   width: 32px;
   height: 32px;
-  border-radius: 100%;
-  font-weight: bold;
-  font-size: 1.25em;
   color: #EEE;
+  border: transparent;
   background: transparent;
-  border: 0.10em solid #EEE;
 }
 
 body {
