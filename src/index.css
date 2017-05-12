@@ -6,6 +6,12 @@ body,
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 *,
 *:before,
 *:after {
@@ -22,8 +28,29 @@ a:focus {
   color: #FFF;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-spinner {
+  font-size: 4em;
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
 .screensaver {
   background-color: #000;
+  color: #EEE;
 }
 
 .screensaver-image {
@@ -50,7 +77,6 @@ a:focus {
   bottom: 0;
   width: 100%;
   padding: 1em;
-  color: #EEE;
   max-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -88,13 +114,16 @@ a:focus {
   font-size: 1.5em;
   width: 32px;
   height: 32px;
-  color: #EEE;
   border: transparent;
   background: transparent;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

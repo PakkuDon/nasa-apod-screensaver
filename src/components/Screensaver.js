@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import LoadingSpinner from './LoadingSpinner';
 import Image from './Image';
 
 const INTERVAL = 30000;
@@ -13,9 +14,10 @@ class Screensaver extends Component {
   }
 
   render() {
-    const { images, index, showExplanations, toggleExplanations } = this.props;
+    const { images, index, showExplanations, toggleExplanations, loading } = this.props;
     return (
       <div className='screensaver'>
+        <LoadingSpinner loading={loading} />
         {images.map((image, i) => (
           <Image
             key={`image-${i}`}
@@ -40,6 +42,7 @@ Screensaver.propTypes = {
       url: PropTypes.string
     })
   ),
+  loading: PropTypes.bool.isRequired,
   showExplanations: PropTypes.bool.isRequired,
   toggleExplanations: PropTypes.func.isRequired
 };
