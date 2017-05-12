@@ -5,7 +5,7 @@ import {
   FETCH_IMAGES_FAIL,
   CHANGE_IMAGE,
   TOGGLE_EXPLANATIONS
-} from './constants';
+} from '../constants';
 
 export const fetchImages = () => ({
   type: FETCH_IMAGES_REQUEST

@@ -1,4 +1,4 @@
-import * as Actions from './constants';
+import * as Actions from '../constants';
 
 const initialState = {
   images: [],

@@ -1,17 +1,16 @@
 import moment from 'moment';
 import fetch from 'isomorphic-fetch';
-import { call, put, takeEvery } from 'redux-saga/effects';
-import { FETCH_IMAGES_REQUEST } from './constants';
+import { call, put } from 'redux-saga/effects';
 import {
   fetchImagesStart,
   fetchImagesSuccess,
   fetchImagesFail
-} from './actions';
-import config from './config';
+} from '../actions';
+import config from '../config';
 
 const IMAGE_COUNT = 20;
 
-function fetchImages() {
+export function fetchImages() {
   const dates = [];
   const date = moment();
   date.subtract(1, 'days');
@@ -35,7 +34,7 @@ function fetchImages() {
   });
 }
 
-export function* fetchImagesAsync() {
+export default function* fetchImagesAsync() {
   yield put(fetchImagesStart());
   try {
     const images = yield call(fetchImages);
@@ -46,14 +45,4 @@ export function* fetchImagesAsync() {
       fetchImagesFail('An error occurred while trying to reach API. Please try again.')
     );
   }
-}
-
-export function* watchFetchImagesAsync() {
-  yield takeEvery(FETCH_IMAGES_REQUEST, fetchImagesAsync);
-}
-
-export default function* rootSaga() {
-  yield [
-    watchFetchImagesAsync()
-  ];
 }
