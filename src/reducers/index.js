@@ -1,6 +1,6 @@
 import * as Actions from '../constants';
 
-const initialState = {
+export const initialState = {
   images: [],
   index: 0,
   loading: false,
